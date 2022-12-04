@@ -1,0 +1,7 @@
+C:\Users\zidli\Desktop\projects\advent-of-code-2022\Advent-Of-Code-2022\bin\Debug\Advent_Of_Code_2022.exe
+C:\Users\zidli\Desktop\projects\advent-of-code-2022\Advent-Of-Code-2022\bin\Debug\Advent_Of_Code_2022.pdb
+C:\Users\zidli\Desktop\projects\advent-of-code-2022\Advent-Of-Code-2022\obj\Debug\Advent-Of-Code-2022.csproj.AssemblyReference.cache
+C:\Users\zidli\Desktop\projects\advent-of-code-2022\Advent-Of-Code-2022\obj\Debug\Advent-Of-Code-2022.csproj.SuggestedBindingRedirects.cache
+C:\Users\zidli\Desktop\projects\advent-of-code-2022\Advent-Of-Code-2022\obj\Debug\Advent-Of-Code-2022.csproj.CoreCompileInputs.cache
+C:\Users\zidli\Desktop\projects\advent-of-code-2022\Advent-Of-Code-2022\obj\Debug\Advent_Of_Code_2022.exe
+C:\Users\zidli\Desktop\projects\advent-of-code-2022\Advent-Of-Code-2022\obj\Debug\Advent_Of_Code_2022.pdb
