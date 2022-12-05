@@ -147,7 +147,7 @@ namespace Advent_Of_Code_2022
                 int win = 6;
 
                 if (opponentValue == 1 && meValue == 2 || opponentValue == 2 && meValue == 3 ||
-                    opponentValue == 3 && meValue == 2)
+                    opponentValue == 3 && meValue == 1)
                 {
                     return win;
                 }
@@ -160,8 +160,6 @@ namespace Advent_Of_Code_2022
 
                 return lost;
             }
-            
-            Console.ReadLine();
         }
     }
 }
