@@ -10,7 +10,7 @@ namespace Advent_Of_Code_2022
     {
         public static void Main(string[] args)
         {
-            Day2();
+            Day3();
         }
 
         private static void Day1()
@@ -159,6 +159,21 @@ namespace Advent_Of_Code_2022
                 }
 
                 return lost;
+            }
+        }
+
+        private static void Day3()
+        {
+            var input = File.ReadAllLines("inputs/day3.txt");
+
+            for (int i = 0; i < 1; i++)
+            {
+                var line = input[i];
+                
+                var firstCompartment = line.Substring(0, line.Length / 2);
+                var secondCompartment = line.Substring(line.Length / 2, line.Length / 2);
+                
+                
             }
         }
     }
