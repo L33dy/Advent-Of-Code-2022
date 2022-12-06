@@ -165,16 +165,61 @@ namespace Advent_Of_Code_2022
         private static void Day3()
         {
             var input = File.ReadAllLines("inputs/day3.txt");
+            var sum = 0;
 
-            for (int i = 0; i < 1; i++)
+            // PART I
+            foreach (var line in input)
             {
-                var line = input[i];
-                
                 var firstCompartment = line.Substring(0, line.Length / 2);
                 var secondCompartment = line.Substring(line.Length / 2, line.Length / 2);
-                
-                
+
+                //Console.WriteLine("First compartment: " + firstCompartment);
+                //Console.WriteLine("Second compartment: " + secondCompartment);
+
+                int priority = CheckCompartments(firstCompartment, secondCompartment);
+
+                //Console.WriteLine("Priority: " + priority);
+                //Console.WriteLine(" ");
+
+                sum += priority;
             }
+            Console.WriteLine("Sum of the priorities: " + sum);
+            int CheckCompartments(string firstComp, string secondComp)
+            {
+                string alpha = " abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                    
+                char itemType = ' ';
+                bool found = false;
+                    
+                foreach (var c1 in firstComp)
+                {
+                    foreach (var c2 in secondComp)
+                    {
+                        if (c1 == c2)
+                        {
+                            itemType = c1;
+                            found = true;
+                            break;
+                        }
+                    }
+
+                    if (found) break;
+                }
+
+                //Console.WriteLine("Found common item type: " + itemType);
+
+                for (int j = 1; j <= alpha.Length; j++)
+                {
+                    if (alpha[j] == itemType)
+                    {
+                        return j;
+                    }
+                }
+                    
+                return 0;
+            }
+            
+            // PART II
         }
     }
 }
