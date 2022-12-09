@@ -10,7 +10,7 @@ namespace Advent_Of_Code_2022
     {
         public static void Main(string[] args)
         {
-            Day3();
+            Day4();
         }
 
         private static void Day1()
@@ -115,7 +115,7 @@ namespace Advent_Of_Code_2022
 
                 gameState = DetermineState(opponentShape, myShape);
                 totalScore += (myShape + gameState);
-                
+
                 Console.WriteLine("Opponent shape: " + opponentShape);
                 Console.WriteLine("My shape: " + myShape);
                 Console.WriteLine("Game State: " + gameState);
@@ -183,14 +183,16 @@ namespace Advent_Of_Code_2022
 
                 sum += priority;
             }
+
             Console.WriteLine("Sum of the priorities: " + sum);
+
             int CheckCompartments(string firstComp, string secondComp)
             {
                 string alpha = " abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-                    
+
                 char itemType = ' ';
                 bool found = false;
-                    
+
                 foreach (var c1 in firstComp)
                 {
                     foreach (var c2 in secondComp)
@@ -215,11 +217,56 @@ namespace Advent_Of_Code_2022
                         return j;
                     }
                 }
-                    
+
                 return 0;
             }
-            
+
             // PART II
+        }
+
+        private static void Day4()
+        {
+            // PART I
+            var input = File.ReadAllLines("inputs/day4.txt");
+            
+            List<int> nums = new List<int>();
+
+            int numsAdded = 0;
+
+            int count = 0;
+            var contained = 0;
+
+            foreach (var line in input)
+            {
+                var splited = line.Split(',');
+
+                //Console.WriteLine(line);
+
+                foreach (var split in splited)
+                {
+                    var x = split.Split('-');
+
+                    foreach (var a in x)
+                    {
+                        nums.Add(Convert.ToInt32(a));
+
+                        numsAdded++;
+                    }
+                }
+
+                if (numsAdded == 4)
+                {
+                    if (nums[0] <= nums[2] && nums[1] >= nums[3] || nums[0] >= nums[2] && nums[1] <= nums[3])
+                    {
+                        contained++;
+                    }
+
+                    numsAdded = 0;
+                    nums.Clear();
+                }
+            }
+
+            Console.WriteLine("Fully contained: " + contained);
         }
     }
 }
