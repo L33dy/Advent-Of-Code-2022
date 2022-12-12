@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Net;
 
 namespace Advent_Of_Code_2022
 {
@@ -10,7 +8,7 @@ namespace Advent_Of_Code_2022
     {
         public static void Main(string[] args)
         {
-            Day4();
+            Day6();
         }
 
         private static void Day1()
@@ -228,7 +226,7 @@ namespace Advent_Of_Code_2022
         {
             // PART I
             var input = File.ReadAllLines("inputs/day4.txt");
-            
+
             List<int> nums = new List<int>();
 
             int numsAdded = 0;
@@ -267,6 +265,58 @@ namespace Advent_Of_Code_2022
             }
 
             Console.WriteLine("Fully contained: " + contained);
+        }
+
+        private static void Day5()
+        {
+            
+        }
+
+        private static void Day6()
+        {
+            var input = File.ReadAllText("inputs/day6.txt");
+            List<char> checkedChars = new List<char>();
+            List<char> totalChars = new List<char>();
+
+            int charsProcessed = 0;
+
+            for (var i = 0; i < input.Length; i++)
+            {
+                if (checkedChars.Count == 4)
+                {
+                    break;
+                }
+
+                for (int j = 0; j < 4; j++)
+                {
+                    if (!checkedChars.Contains(input[i + j]))
+                    {
+                        checkedChars.Add(input[i + j]);
+                    }
+                    else
+                    {
+                        checkedChars.Clear();
+
+                        break;
+                    }
+                }
+                
+                totalChars.Add(input[i]);
+            }
+
+            // Print output
+            foreach (var c in checkedChars)
+            {
+                Console.Write(c);
+            }
+
+            Console.WriteLine("");
+            Console.WriteLine("Characters needed to be processed: " + (totalChars.Count + 3));
+            
+            void CheckList()
+            {
+                
+            }
         }
     }
 }
